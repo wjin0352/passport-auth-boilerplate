@@ -15,9 +15,10 @@ exports.signin = function(req, res, next) {
 }
 
 exports.signup = function(req, res, next) {
+  // if using postman to test make sure you use raw json and click on json for data type because I didn't include urlencoded option on bodyParser.
   const email = req.body.email;
   const password = req.body.password;
-
+  console.log(email, password);
   if (!email || !password) {
     return res.status(422).send({ error: 'you must provide email and password' });
   }
